@@ -2,7 +2,7 @@
 
 A **BitTorrent-like peer-to-peer file sharing** application: a **tracker written in C** keeps track of files and peers, and **peers written in Java** (with a Swing GUI) announce themselves, look for files and exchange them **piece by piece** directly with each other.
 
-> School project, 2nd year at ENSEIRB-MATMECA (networking, 2019-2020), by Johan Chataigner, Emeric Duchemin, Laurent Genty, Dylan Hertay and Lucas Trocherie. Full report (in French): [`rapport-p2p.pdf`](rapport-p2p.pdf).
+> By Johan Chataigner, Emeric Duchemin, Laurent Genty, Dylan Hertay and Lucas Trocherie. Full report (in French): [`rapport-p2p.pdf`](rapport-p2p.pdf).
 
 ![Demo: a tracker and three peers, peer A shares a file, peers B and C download it](media/demo.gif)
 
@@ -88,7 +88,7 @@ media/                 # demo GIF / video
 
 ## Known limitations
 
-This is the code as it was submitted, with only one fix to build on macOS (`_DARWIN_C_SOURCE` for `pthread_setname_np` in `thpool.c`). Known issues:
+The code is kept as is, with only one fix to build on macOS (`_DARWIN_C_SOURCE` for `pthread_setname_np` in `thpool.c`). Known issues:
 
 - A peer crashes when it serves a file that was already in its `seed/` folder at startup (buffermap size bug in `FileManager.getBuffermapToString`), so the demo shares the file from another folder.
 - Pieces are sent as text, so only text files are transferred reliably.
