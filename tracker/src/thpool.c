@@ -8,6 +8,10 @@
  *
  ********************************/
 
+#if defined(__APPLE__)
+/* Needed on macOS to expose pthread_setname_np alongside _POSIX_C_SOURCE */
+#define _DARWIN_C_SOURCE
+#endif
 #define _POSIX_C_SOURCE 200809L
 #include <unistd.h>
 #include <signal.h>
